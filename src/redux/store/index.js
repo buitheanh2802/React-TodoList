@@ -4,10 +4,9 @@ import accountReducer from './../slices/account.slice';
 const store = configureStore({
     reducer : {
         account : accountReducer
-    }
+    },
+    devTools : process.env.MODE === 'development'
 });
-
-console.log(process.env.API_URL);
 
 
 export default store;
