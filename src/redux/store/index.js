@@ -7,5 +7,7 @@ const store = configureStore({
     }
 });
 
+console.log(process.env.API_URL);
 
-export default store
+
+export default store;
