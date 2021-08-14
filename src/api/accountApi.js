@@ -2,7 +2,7 @@ import axios from 'axios';
 import { axiosClient } from './axiosClient';
 
 class AccountApi {
-    url = 'accounts'
+    url = '/accounts'
     gets (){
         return axiosClient.get(this.url)
     }
