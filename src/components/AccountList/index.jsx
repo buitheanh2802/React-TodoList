@@ -1,37 +1,65 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import TableContainer from '@material-ui/core/TableContainer';
 import Table from '@material-ui/core/Table';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { useTheme } from '@material-ui/core/styles';
+import Skeleton from '@material-ui/lab/Skeleton';
+import Avatar from '@material-ui/core/Avatar';
+import { useBreakpoints } from '../../helpers/materialUi';
+import { useDispatch, useSelector } from 'react-redux';
+import { accountGets } from './../../redux/actions/account.action';
+import Button from '@material-ui/core/Button';
 
 const AccountList = () => {
+    const account = useSelector(state => state.account);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(accountGets())
+    }, [])
 
-    const theme = useTheme()
-    const media = useMediaQuery(theme.breakpoints.down('sm'))
-    console.log(media);
-    console.log(theme);
     return (
         <TableContainer>
             <h1 style={{ textAlign: 'center' }}>Danh sách người dùng</h1>
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>ID</TableCell>
-                        <TableCell>Ảnh đại diện</TableCell>
-                        <TableCell>Tên đăng nhập</TableCell>
-                        <TableCell>Họ và tên</TableCell>
-                        <TableCell>Giới tính</TableCell>
+                        <TableCell width={20}>ID</TableCell>
+                        <TableCell width={80}>Ảnh đại diện</TableCell>
+                        <TableCell width={100}>Tên đăng nhập</TableCell>
+                        <TableCell width={150}>Họ và tên</TableCell>
+                        <TableCell width={65}>Giới tính</TableCell>
                         <TableCell>Lớp học</TableCell>
                         <TableCell>Actions</TableCell>
                     </TableRow>
                 </TableHead>
-                <TableBody>
-
-                </TableBody>
+                {account.models.length > 0 ?
+                    <TableBody>
+                        {account.models.map((item, key) =>
+                            <TableRow key={key}>
+                                <TableCell>{key + 1}</TableCell>
+                                <TableCell>
+                                    <Avatar alt={item.fullName} src={item.avatar} />
+                                </TableCell>
+                                <TableCell>{item.userName}</TableCell>
+                                <TableCell>{item.fullName}</TableCell>
+                                <TableCell>{item.gender ? 'Nam' : 'Nữ'}</TableCell>
+                                <TableCell>{item.class}</TableCell>
+                                <TableCell>
+                                    <Button
+                                        size="small"
+                                        color="primary"
+                                        variant="contained"
+                                        disableElevation>
+                                        Sửa
+                                    </Button>
+                                </TableCell>
+                            </TableRow>
+                        )}
+                    </TableBody>
+                    : ''
+                }
             </Table>
         </TableContainer>
     );

@@ -9,7 +9,8 @@ const initialState = {
             update : false,
             add : false
         }
-    }
+    },
+    errors : null
 }
 
 const accountSlice = createSlice({
@@ -29,13 +30,16 @@ const accountSlice = createSlice({
         gets(state,action){
             const { data } = action.payload;
             state.models = data;
+        },
+        catchError(state,action){
+            state.errors = action.payload
         }
     }
 });
 
 const { actions, reducer } = accountSlice;
 
-export const { gets,startCall } = actions;
+export const { gets,startCall,catchError } = actions;
 
 export default reducer;
 
