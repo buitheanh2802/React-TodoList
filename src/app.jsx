@@ -1,9 +1,12 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 const App = () => {
     return (
         <div>
-            hello world
+            <Button variant="outlined" size="medium" color="primary" disableElevation>
+                Submit
+            </Button>
         </div>
     );
 };
