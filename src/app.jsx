@@ -1,19 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import store from './redux/store';
 import { Provider } from 'react-redux';
-import Container from '@material-ui/core/Container';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './helpers/materialUi';
-import AccountList from './components/AccountList';
+import RootRoute from './routes';
 
 const App = () => {
+  
     return (
         <Provider store={store}>
             <ThemeProvider theme={theme}>
-                <Container maxWidth="md">
-                    <h3 style={{ textAlign: 'center' }}>Todo List Account</h3>
-                    <AccountList />
-                </Container>
+                <RootRoute />
             </ThemeProvider>
         </Provider>
     );

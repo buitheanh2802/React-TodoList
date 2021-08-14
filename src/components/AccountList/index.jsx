@@ -10,6 +10,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 const AccountList = () => {
     return (
         <TableContainer>
+             <h1 style={{textAlign : 'center'}}>Danh sách người dùng</h1>
             <Table>
                 <TableHead>
                     <TableRow>
@@ -19,8 +20,12 @@ const AccountList = () => {
                         <TableCell>Họ và tên</TableCell>
                         <TableCell>Giới tính</TableCell>
                         <TableCell>Lớp học</TableCell>
+                        <TableCell>Actions</TableCell>
                     </TableRow>
                 </TableHead>
+                <TableBody>
+                    
+                </TableBody>
             </Table>
         </TableContainer>
     );
