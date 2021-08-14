@@ -6,11 +6,17 @@ import TableRow from '@material-ui/core/TableRow';
 import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
 
 const AccountList = () => {
+
+    const theme = useTheme()
+    const media = useMediaQuery(theme.breakpoints.down('sm'))
+    console.log(media);
+    console.log(theme);
     return (
         <TableContainer>
-             <h1 style={{textAlign : 'center'}}>Danh sách người dùng</h1>
+            <h1 style={{ textAlign: 'center' }}>Danh sách người dùng</h1>
             <Table>
                 <TableHead>
                     <TableRow>
@@ -24,7 +30,7 @@ const AccountList = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    
+
                 </TableBody>
             </Table>
         </TableContainer>
