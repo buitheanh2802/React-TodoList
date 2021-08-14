@@ -54,6 +54,13 @@ const AccountList = () => {
                                         disableElevation>
                                         Sửa
                                     </Button>
+                                    <Button
+                                        size="small"
+                                        color="secondary"
+                                        variant="contained"
+                                        disableElevation>
+                                        Xóa
+                                    </Button>
                                 </TableCell>
                             </TableRow>
                         )}
