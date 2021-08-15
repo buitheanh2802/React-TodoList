@@ -47,7 +47,6 @@ const AccountList = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         if(account.models.length == 0){
-            console.log('runnig');
             dispatch(accountGets())
         }
     }, []);
