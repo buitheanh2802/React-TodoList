@@ -6,7 +6,6 @@ import { theme } from './helpers/materialUi';
 import RootRoute from './routes';
 
 const App = () => {
-  
     return (
         <Provider store={store}>
             <ThemeProvider theme={theme}>

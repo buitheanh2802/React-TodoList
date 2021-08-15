@@ -11,13 +11,16 @@ import { useBreakpoints } from '../../helpers/materialUi';
 import { useDispatch, useSelector } from 'react-redux';
 import { accountGets } from './../../redux/actions/account.action';
 import Button from '@material-ui/core/Button';
+import Link from '@material-ui/core/Link';
+import { Link as RouteLink } from 'react-router-dom';
 
 const AccountList = () => {
+
     const account = useSelector(state => state.account);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(accountGets())
-    }, [])
+        dispatch(accountGets());
+    }, []);
 
     return (
         <TableContainer>
@@ -34,39 +37,38 @@ const AccountList = () => {
                         <TableCell>Actions</TableCell>
                     </TableRow>
                 </TableHead>
-                {account.models.length > 0 ?
+                {account.models.length > 0 ? (
                     <TableBody>
-                        {account.models.map((item, key) =>
+                        {account.models.map((item, key) => (
                             <TableRow key={key}>
                                 <TableCell>{key + 1}</TableCell>
                                 <TableCell>
-                                    <Avatar alt={item.fullName} src={item.avatar} />
+                                    <Avatar
+                                        alt={item.fullName}
+                                        src={item.avatar}
+                                    />
                                 </TableCell>
                                 <TableCell>{item.userName}</TableCell>
                                 <TableCell>{item.fullName}</TableCell>
-                                <TableCell>{item.gender ? 'Nam' : 'Nữ'}</TableCell>
+                                <TableCell>
+                                    {item.gender ? 'Nam' : 'Nữ'}
+                                </TableCell>
                                 <TableCell>{item.class}</TableCell>
                                 <TableCell>
-                                    <Button
-                                        size="small"
-                                        color="primary"
-                                        variant="contained"
-                                        disableElevation>
+                                    <Link
+                                        style={{marginRight:'10px'}}
+                                        variant='body1'
+                                        color='primary'
+                                        component={RouteLink}
+                                        to='/hello'>
                                         Sửa
-                                    </Button>
-                                    <Button
-                                        size="small"
-                                        color="secondary"
-                                        variant="contained"
-                                        disableElevation>
-                                        Xóa
-                                    </Button>
+                                    </Link>
+                                    <Link variant='body1' href='/hello'>Xóa</Link>
                                 </TableCell>
                             </TableRow>
-                        )}
+                        ))}
                     </TableBody>
-                    : ''
-                }
+                ) : null}
             </Table>
         </TableContainer>
     );

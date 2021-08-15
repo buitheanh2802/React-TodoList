@@ -6,10 +6,10 @@ import Container from '@material-ui/core/Container';
 const Routes = () => {
     return (
         <React.Fragment>
-            <Container maxWidth="lg">
+            <Container maxWidth='lg'>
                 <BrowserRouter>
                     <Switch>
-                        <Route path="/">
+                        <Route path='/'>
                             <AccoutList />
                         </Route>
                     </Switch>
