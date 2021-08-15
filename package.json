@@ -6,29 +6,33 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "prettier": "prettier --write ./src/**/*.jsx"
+    "prettier": "prettier --write ./src/**/*.jsx",
+    "tailwind": "postcss ./src/assets/tailwindCore/index.css -o ./src/assets/css/index.css -w"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
+    "autoprefixer": "^10.3.1",
     "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
     "babel-plugin-transform-imports": "^2.0.0",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.2.0",
     "dotenv-webpack": "^7.0.3",
+    "glob": "^7.1.7",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.2.0",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
     "prettier": "^2.3.2",
     "style-loader": "^3.2.1",
+    "tailwindcss": "^2.2.7",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@material-ui/core": "^4.12.3",
-    "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
     "@reduxjs/toolkit": "^1.6.1",
     "axios": "^0.21.1",

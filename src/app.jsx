@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import store from './redux/store';
 import { Provider } from 'react-redux';
-import { ThemeProvider } from '@material-ui/core/styles';
-import { theme } from './helpers/materialUi';
 import RootRoute from './routes';
+import i18n from './helpers/i18n';
+import { I18nextProvider } from 'react-i18next';
 
 const App = () => {
     return (
         <Provider store={store}>
-            <ThemeProvider theme={theme}>
+            <I18nextProvider i18n={i18n}>
                 <RootRoute />
-            </ThemeProvider>
+            </I18nextProvider>
         </Provider>
     );
 };
