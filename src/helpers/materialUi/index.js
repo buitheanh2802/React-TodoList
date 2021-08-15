@@ -10,11 +10,16 @@ export const theme = createTheme({
             lg : 1023,
             xl : 1279
         }
+    },
+    typography : {
+        button : {
+            textTransform : 'none'
+        }
     }
 });
 
 export const useStyles = (styles) => {
-    return makeStyles(styles);
+    return makeStyles(styles)();
 }
 
 export const useBreakpoints = (breakpoint) => {

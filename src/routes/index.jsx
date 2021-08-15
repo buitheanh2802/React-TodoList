@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import AccoutList from './../components/AccountList';
+import AccountAdd from './../components/AccountAdd';
 import Container from '@material-ui/core/Container';
 
 const Routes = () => {
@@ -9,7 +10,10 @@ const Routes = () => {
             <Container maxWidth='lg'>
                 <BrowserRouter>
                     <Switch>
-                        <Route path='/'>
+                        <Route path='/add'>
+                            <AccountAdd />
+                        </Route>
+                        <Route path='/' exact={true}>
                             <AccoutList />
                         </Route>
                     </Switch>
