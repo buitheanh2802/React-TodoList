@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import RootRoute from './routes';
 import i18n from './helpers/i18n';
 import { I18nextProvider } from 'react-i18next';
+import './assets/css/index.css';
 
 const App = () => {
     return (

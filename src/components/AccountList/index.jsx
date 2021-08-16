@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { accountGets } from './../../redux/actions/account.action';
+import { Link } from 'react-router-dom';
 
 const AccountList = () => {
     const account = useSelector(state => state.account);
@@ -12,7 +13,9 @@ const AccountList = () => {
     }, []);
 
     return (
-        <div></div>
+        <div>
+           
+        </div>
     );
 };
 
