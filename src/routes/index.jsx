@@ -7,6 +7,7 @@ const AccountList = React.lazy(() => import('./../components/AccountList'));
 const Routes = () => {
     return (
         <React.Fragment>
+
             <BrowserRouter>
                 <React.Suspense fallback={<div>Loading.....</div>}>
                     <Switch>
