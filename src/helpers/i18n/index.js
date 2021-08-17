@@ -1,7 +1,6 @@
 import i18n from 'i18next';
 import ReactI18n, { initReactI18next } from 'react-i18next';
 import translationVI from './../../locales/vi/translation';
-console.log(translationVI);
 
 i18n
     .use(initReactI18next)

@@ -18,7 +18,7 @@ const ReactSelectOption = [
 
 const Routes = () => {
     const setting = useSelector(state => state.setting);
-    console.log(setting);
+
     return (
         <React.Fragment>
             <div className="w-[1024px] mt-[20px] mx-auto ">

@@ -20,7 +20,7 @@ const AccountList = () => {
             <h1 className="py-[10px] text-center text-[24px] font-semibold mb-[20px] ">
                 {t('titleList')}
             </h1>
-            <Link className="px-[15px] flex items-center gap-[5px] bg-yellow-600 rounded-sm text-white py-[8px] text-[14px]" to="/add">Thêm mới</Link>
+            <Link className="px-[15px] items-center gap-[5px] text-center block w-[100px] bg-blue-500 rounded-sm text-white py-[8px] text-[14px]" to="/add">Thêm mới</Link>
             <div className="flex px-[5px] py-[15px] mb-[5px] border-b font-medium ">
                 <div className="w-[5%] font-semibold " >ID</div>
                 <div className="w-[15%] font-semibold ">Ảnh đại diện</div>

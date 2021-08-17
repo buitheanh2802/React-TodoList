@@ -576,6 +576,9 @@ video {
 .mt-\[20px\] {
 	margin-top: 20px;
 }
+.block {
+	display: block;
+}
 .flex {
 	display: flex;
 }
@@ -602,6 +605,9 @@ video {
 }
 .w-\[150px\] {
 	width: 150px;
+}
+.w-\[100px\] {
+	width: 100px;
 }
 .items-center {
 	align-items: center;
@@ -631,6 +637,10 @@ video {
 .bg-red-600 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(220, 38, 38, var(--tw-bg-opacity));
+}
+.bg-blue-500 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
 }
 .object-cover {
 	-o-object-fit: cover;
