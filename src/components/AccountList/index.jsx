@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { accountGets } from './../../redux/actions/account.action';
 import { Link } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
+import { useTranslation } from 'react-i18next';
 
 const AccountList = () => {
     const account = useSelector(state => state.account);
+    const { t } = useTranslation()
     const dispatch = useDispatch();
     useEffect(() => {
         if (account.models.length == 0) {
@@ -15,7 +17,10 @@ const AccountList = () => {
 
     return (
         <div className="w-[1024px] mx-auto ">
-            <h1 className="py-[10px] text-center text-[24px] font-semibold mb-[20px] ">Danh sách người dùng</h1>
+            <h1 className="py-[10px] text-center text-[24px] font-semibold mb-[20px] ">
+                {t('titleList')}
+            </h1>
+            <Link className="px-[15px] flex items-center gap-[5px] bg-yellow-600 rounded-sm text-white py-[8px] text-[14px]" to="/add">Thêm mới</Link>
             <div className="flex px-[5px] py-[15px] mb-[5px] border-b font-medium ">
                 <div className="w-[5%] font-semibold " >ID</div>
                 <div className="w-[15%] font-semibold ">Ảnh đại diện</div>
@@ -29,7 +34,7 @@ const AccountList = () => {
             {
                 account.models.length > 0 ?
                     account.models.map((item, key) => {
-                        return <div className="flex px-[5px] py-[15px] mb-[5px] font-medium ">
+                        return <div key={key} className="flex px-[5px] py-[15px] mb-[5px] font-medium ">
                             <div className="my-auto w-[5%] " >{key + 1}</div>
                             <div className="my-auto w-[15%] ">
                                 <img className="object-cover rounded-full w-[50px] h-[50px] " src={item.avatar} alt={item.userName} />
